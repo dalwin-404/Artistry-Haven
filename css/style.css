@@ -75,7 +75,6 @@ img {
   font-family: inherit;
   font-size: inherit;
   cursor: pointer;
-
 }
 
 .btn:hover {
@@ -117,7 +116,6 @@ img {
 .header .main-menu a:hover {
   color: #e85a4f;
   font-weight: bold;
-
 }
 
 /* 🔹 Hamburger menu */
@@ -184,7 +182,8 @@ img {
 /* Hero Section */
 .hero {
   height: 80vh;
-  background: url('../img/background_vector_template_design_1.jpg') no-repeat center center/cover;
+  background: url('../img/background_vector_template_design_1.jpg') no-repeat
+    center center/cover;
   /* full screen height */
   display: flex;
   align-items: center;
@@ -205,12 +204,10 @@ img {
 }
 
 .hero-text h2 {
-  padding-top: 8rem;
-  font-size: 2rem;
+  padding-top: 5rem;
+  font-size: 1.2rem;
   color: #f9f9f9;
-  line-height: 1.2;
-
-
+  line-height: 1.7;
 }
 
 /* Right side: Hero image */
@@ -237,7 +234,6 @@ img {
   text-decoration: none;
   border-radius: 5px;
   transition: transform 0.3s ease, background 0.3s ease;
-
 }
 
 .btn-showcase:hover {
@@ -382,8 +378,6 @@ p {
   border-radius: 10px;
 }
 
-
-
 /* Newsletter */
 .newsletter {
   text-align: center;
@@ -491,8 +485,6 @@ textarea {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
 }
 
-
-
 /* Footer */
 .footer {
   border-top: 1px solid #aaa;
@@ -573,15 +565,13 @@ textarea {
     width: 100%;
   }
 
-  .hero-image img {
-    margin: 0 auto;
-    max-width: 90vw;
-    height: auto;
-    display: block;
+  .hero-image {
+    display: none;
   }
 
   .hero h2 {
-    font-size: 1.2rem;
+    font-size: 1rem;
+    padding-top: 6rem;
   }
 
   .testimonial {
