@@ -1,4 +1,4 @@
-# Artistry Have
+# Artistry Haven
 
 Artistry Haven is a vibrant and Visually appealing website designed to connect artists and art enthusiasts. It serves as a platform to showcase creativity, share inspiration and foster a community of like-minded individuals.
 
@@ -31,6 +31,6 @@ Artistry Haven is a vibrant and Visually appealing website designed to connect a
 
 - HTML5: For structuring the content
 - CSS3: For styling and layout, including responsive design
-- Javascript: For interactivity, such as navigation background changes on scroll.
+- Javascript: For interactivity, such as navigation background changes on scroll and for the Harmburger Menu.
 - Font Awesome: For icons used throughout the site.
 - Lighbox2: For the gallery's image viewing functionality.
