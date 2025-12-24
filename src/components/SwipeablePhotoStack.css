@@ -1,0 +1,204 @@
+.swipeable-stack-container {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stack-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 550px;
+  margin: 0 auto;
+}
+
+.stack-card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  cursor: grab;
+  user-select: none;
+  background: white;
+}
+
+.stack-card.dragging {
+  cursor: grabbing;
+}
+
+.stack-card img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-info {
+  padding: 1.5rem;
+  background: white;
+  height: 25%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.card-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-info > p {
+  margin: 0;
+  color: #667eea;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.card-description {
+  margin-top: 0.5rem !important;
+  color: #666 !important;
+  font-weight: 400 !important;
+  font-size: 0.9rem !important;
+  line-height: 1.4;
+}
+
+.top-card {
+  will-change: transform;
+}
+
+.top-card.dragging {
+  transition: none;
+}
+
+.top-card.not-dragging {
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              opacity 0.3s ease-out;
+}
+
+.top-card.animating-out {
+  transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55),
+              opacity 0.3s ease-out;
+}
+
+.background-card {
+  pointer-events: none;
+  transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+              opacity 0.5s ease-out,
+              z-index 0s linear 0.25s;
+}
+
+.swipe-indicator {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: bold;
+  opacity: 0;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+.swipe-left {
+  left: 20px;
+  border: 4px solid #ef4444;
+  color: #ef4444;
+}
+
+.swipe-right {
+  right: 20px;
+  border: 4px solid #10b981;
+  color: #10b981;
+}
+
+.swipe-indicator.active {
+  opacity: 0.9;
+}
+
+.stack-instructions {
+  margin-top: 2rem;
+  text-align: center;
+  color: #666;
+  font-size: 0.95rem;
+}
+
+.no-photos {
+  text-align: center;
+  padding: 4rem 2rem;
+  color: #999;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .swipeable-stack-container {
+    min-height: 500px;
+  }
+
+  .stack-wrapper {
+    max-width: 350px;
+    height: 480px;
+  }
+
+  .card-info {
+    padding: 1.25rem;
+  }
+
+  .card-info h3 {
+    font-size: 1.25rem;
+  }
+
+  .card-info > p {
+    font-size: 0.9rem;
+  }
+
+  .swipe-indicator {
+    width: 50px;
+    height: 50px;
+    font-size: 1.5rem;
+  }
+
+  .swipe-left {
+    left: 15px;
+  }
+
+  .swipe-right {
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .stack-wrapper {
+    max-width: 300px;
+    height: 420px;
+  }
+
+  .card-info {
+    padding: 1rem;
+  }
+
+  .card-info h3 {
+    font-size: 1.1rem;
+  }
+
+  .swipe-indicator {
+    width: 45px;
+    height: 45px;
+    font-size: 1.25rem;
+  }
+}
+
