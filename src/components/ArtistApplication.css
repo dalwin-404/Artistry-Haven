@@ -1,0 +1,324 @@
+.artist-application {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+.artist-application-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 100vh;
+}
+
+/* Left Column: The Pitch */
+.artist-application-pitch {
+  background: linear-gradient(
+      135deg,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.6) 100%
+    ),
+    url('https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&h=1600&fit=crop')
+      center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  position: relative;
+}
+
+.artist-application-pitch-content {
+  max-width: 500px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.artist-application-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  line-height: 1.2;
+  margin: 0;
+  color: #ffffff;
+}
+
+.artist-application-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.artist-application-benefit {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.125rem;
+  color: #ffffff;
+}
+
+.artist-application-check-icon {
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+.artist-application-testimonial {
+  margin: 0;
+  padding: 0;
+  border-left: 3px solid #ffffff;
+  padding-left: 1.5rem;
+}
+
+.artist-application-testimonial-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #ffffff;
+  margin: 0 0 1rem 0;
+  font-style: italic;
+}
+
+.artist-application-testimonial-author {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* Right Column: The Form */
+.artist-application-form-section {
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  overflow-y: auto;
+}
+
+.artist-application-form-wrapper {
+  width: 100%;
+  max-width: 600px;
+}
+
+.artist-application-form-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 2rem 0;
+}
+
+.artist-application-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.artist-application-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.artist-application-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.artist-application-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.artist-application-input,
+.artist-application-textarea {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0;
+  background: #ffffff;
+  color: #111827;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.artist-application-input:focus,
+.artist-application-textarea:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.artist-application-textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: 'Quicksand', sans-serif;
+  line-height: 1.6;
+}
+
+/* File Upload */
+.artist-application-file-upload {
+  position: relative;
+  border: 2px dashed #d1d5db;
+  border-radius: 0;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: #f9fafb;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.artist-application-file-upload:hover {
+  border-color: #000000;
+  background: #f3f4f6;
+}
+
+.artist-application-file-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.artist-application-file-upload-content {
+  pointer-events: none;
+}
+
+.artist-application-file-upload-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #374151;
+  margin: 0 0 0.5rem 0;
+}
+
+.artist-application-file-upload-hint {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Submit Button */
+.artist-application-submit-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: #000000;
+  color: #ffffff;
+  border: 2px solid #000000;
+  border-radius: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  margin-top: 0.5rem;
+}
+
+.artist-application-submit-btn:hover:not(:disabled) {
+  background: #1a1a1a;
+  transform: translateX(4px);
+}
+
+.artist-application-submit-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.artist-application-submit-arrow {
+  transition: transform 0.2s ease;
+}
+
+.artist-application-submit-btn:hover:not(:disabled)
+  .artist-application-submit-arrow {
+  transform: translateX(4px);
+}
+
+/* Success State */
+.artist-application-success {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.artist-application-success-icon {
+  color: #10b981;
+  margin: 0 auto 1.5rem;
+}
+
+.artist-application-success-title {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 1rem 0;
+}
+
+.artist-application-success-message {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .artist-application-container {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-application-pitch {
+    min-height: 50vh;
+    padding: 3rem 2rem;
+  }
+
+  .artist-application-title {
+    font-size: 2.5rem;
+  }
+
+  .artist-application-form-section {
+    padding: 3rem 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-application-pitch {
+    padding: 2rem 1.5rem;
+  }
+
+  .artist-application-title {
+    font-size: 2rem;
+  }
+
+  .artist-application-form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .artist-application-form-section {
+    padding: 2rem 1.5rem;
+  }
+
+  .artist-application-form-title {
+    font-size: 1.75rem;
+  }
+}
+

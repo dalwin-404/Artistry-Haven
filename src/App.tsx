@@ -1,21 +1,27 @@
 import { useState } from 'react';
-import Header from './components/Header';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 import Hero from './components/Hero';
 import HavenVault from './components/HavenVault';
-import Gallery from './components/Gallery';
 import TrustedBy from './components/TrustedBy';
-import ArtistsSection from './components/ArtistsSection';
-import VermeerPaintings from './components/VermeerPaintings';
-import AboutSection from './components/AboutSection';
-import ContactSection from './components/ContactSection';
+import HomeFeaturedCollection from './components/HomeFeaturedCollection';
+import AboutSections from './components/AboutSections';
 import Newsletter from './components/Newsletter';
+import GalleryFeed from './components/GalleryFeed';
+import ArtistProfile from './components/ArtistProfile';
+import ArtworkDetail from './components/ArtworkDetail';
+import ArtistApplication from './components/ArtistApplication';
+import Exhibitions from './components/Exhibitions';
+import Learn from './components/Learn';
+import ArtistDirectory from './components/ArtistDirectory';
+import About from './components/About';
 import Footer from './components/Footer';
 import { useMetArtists } from './hooks/useMetArtists';
 import { sampleArtists } from './data/sampleData';
 import './App.css';
 
-function App() {
-  // Fetch artworks from The Art Institute of Chicago Public API
+function HomePage() {
   const { artists: metArtists, loading: metLoading } = useMetArtists([
     { name: 'Vincent van Gogh', bio: 'Dutch Post-Impressionist painter known for bold colors and dramatic brushwork.', artworkLimit: 5 },
     { name: 'Claude Monet', bio: 'French Impressionist painter, founder of French Impressionist painting.', artworkLimit: 5 },
@@ -24,12 +30,10 @@ function App() {
     { name: 'Grant Wood', bio: 'American painter best known for his paintings depicting the rural American Midwest.', artworkLimit: 5 },
   ]);
 
-  // Use Met API artists if loaded, otherwise fallback to sample data
   const artists = metArtists.length > 0 ? metArtists : sampleArtists;
 
   return (
-    <div className="app">
-      <Header />
+    <>
       {metLoading && (
         <div style={{ 
           padding: '2rem', 
@@ -40,16 +44,33 @@ function App() {
           Loading artworks from The Art Institute of Chicago...
         </div>
       )}
+      <Hero />
+      <HavenVault artists={artists} />
+      <TrustedBy />
+      <HomeFeaturedCollection />
+      <AboutSections />
+      <Newsletter />
+    </>
+  );
+}
+
+function App() {
+  return (
+    <div className="app">
+      <ScrollToTop />
+      <Navbar />
       <main>
-        <Hero />
-        <HavenVault artists={artists} />
-        <Gallery artists={artists} />
-        <TrustedBy />
-        <ArtistsSection artists={artists} />
-        <VermeerPaintings artists={artists} />
-        <AboutSection />
-        <ContactSection />
-        <Newsletter />
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/gallery" element={<GalleryFeed />} />
+          <Route path="/artist/:artistName" element={<ArtistProfile />} />
+          <Route path="/artwork/:id" element={<ArtworkDetail />} />
+          <Route path="/apply" element={<ArtistApplication />} />
+          <Route path="/exhibitions" element={<Exhibitions />} />
+          <Route path="/learn" element={<Learn />} />
+          <Route path="/artists" element={<ArtistDirectory />} />
+          <Route path="/about" element={<About />} />
+        </Routes>
       </main>
       <Footer />
     </div>

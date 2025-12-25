@@ -1,0 +1,271 @@
+.artist-directory {
+  min-height: 100vh;
+  background: #ffffff;
+  padding: 4rem 0;
+}
+
+.artist-directory-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.artist-directory-header {
+  margin-bottom: 3rem;
+}
+
+.artist-directory-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 3.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 2rem 0;
+}
+
+/* Search Bar */
+.artist-directory-search {
+  position: relative;
+  max-width: 600px;
+  width: 100%;
+}
+
+.artist-directory-search-icon {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #6b7280;
+  pointer-events: none;
+}
+
+.artist-directory-search-input {
+  width: 100%;
+  padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 0;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  color: #111827;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.artist-directory-search-input:focus {
+  outline: none;
+  border-color: #000000;
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
+}
+
+.artist-directory-search-input::placeholder {
+  color: #9ca3af;
+}
+
+/* Grid Layout */
+.artist-directory-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+}
+
+/* Artist Card */
+.artist-directory-card {
+  position: relative;
+  aspect-ratio: 1;
+  overflow: hidden;
+  cursor: pointer;
+  background: #f9fafb;
+}
+
+.artist-directory-card-image-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.artist-directory-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter 0.4s ease, transform 0.4s ease;
+}
+
+.artist-directory-card:hover .artist-directory-card-image {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.artist-directory-card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.7) 100%
+  );
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  padding: 1rem;
+}
+
+.artist-directory-card:hover .artist-directory-card-overlay {
+  opacity: 1;
+}
+
+.artist-directory-card-arrow {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 4px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.artist-directory-card:hover .artist-directory-card-arrow {
+  transform: translate(4px, -4px);
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.artist-directory-card-content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1.5rem;
+  z-index: 1;
+}
+
+.artist-directory-card-name {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 0 0 0.25rem 0;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.artist-directory-card-dates {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Skeleton Loader */
+.artist-directory-skeleton {
+  aspect-ratio: 1;
+  background: #f3f4f6;
+  border-radius: 0;
+  overflow: hidden;
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+.artist-directory-skeleton-image {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    #e5e7eb 0%,
+    #f3f4f6 50%,
+    #e5e7eb 100%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes skeleton-loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Error & Empty States */
+.artist-directory-error,
+.artist-directory-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: 'Quicksand', sans-serif;
+}
+
+.artist-directory-error h2 {
+  font-size: 1.5rem;
+  color: #111827;
+  margin: 0 0 1rem 0;
+}
+
+.artist-directory-error p {
+  font-size: 1rem;
+  color: #dc2626;
+  margin: 0;
+}
+
+.artist-directory-empty p {
+  font-size: 1.125rem;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .artist-directory-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .artist-directory-title {
+    font-size: 2.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .artist-directory {
+    padding: 2rem 0;
+  }
+
+  .artist-directory-container {
+    padding: 0 1rem;
+  }
+
+  .artist-directory-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .artist-directory-header {
+    margin-bottom: 2rem;
+  }
+
+  .artist-directory-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .artist-directory-card-name {
+    font-size: 1.125rem;
+  }
+
+  .artist-directory-card-dates {
+    font-size: 0.8125rem;
+  }
+}
+

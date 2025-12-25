@@ -1,4 +1,5 @@
 import { useEffect, useRef } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './Footer.css';
 import artistryHavenLogo from '../assets/artistryHavenLogo.png';
 
@@ -44,6 +45,7 @@ const MapPinIcon = () => (
 );
 
 export default function Footer() {
+  const navigate = useNavigate();
   const bubblesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -73,14 +75,6 @@ export default function Footer() {
     }
   }, []);
 
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, targetId: string) => {
-    e.preventDefault();
-    const element = document.getElementById(targetId);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };
-
   return (
     <>
       {/* SVG Filter for blob effect */}
@@ -103,13 +97,13 @@ export default function Footer() {
         <div className="footer-content">
           {/* Left Column - Logo + Description + Social */}
           <div className="footer-left">
-            <div className="footer-logo">
+            <Link to="/" className="footer-logo">
               <img 
                 src={artistryHavenLogo} 
                 alt="Artistry Haven" 
                 className="footer-logo-image"
               />
-            </div>
+            </Link>
             <p className="footer-description">
               Showcasing art to the world, one masterpiece at a time.
             </p>
@@ -130,21 +124,24 @@ export default function Footer() {
           <div className="footer-center">
             <div className="footer-column">
               <b>Explore</b>
-              <a href="#gallery" onClick={(e) => handleNavClick(e, 'gallery')}>Gallery</a>
-              <a href="#artists" onClick={(e) => handleNavClick(e, 'artists')}>Artists</a>
-              <a href="#about" onClick={(e) => handleNavClick(e, 'about')}>About</a>
+              <Link to="/gallery">Gallery</Link>
+              <Link to="/artists">Artists</Link>
+              <Link to="/exhibitions">Exhibitions</Link>
+              <Link to="/learn">Learn</Link>
+              <Link to="/about">About</Link>
             </div>
             <div className="footer-column">
               <b>Resources</b>
-              <a href="#">Featured Works</a>
-              <a href="#">Collections</a>
-              <a href="#">Blog</a>
+              <Link to="/">Featured Works</Link>
+              <Link to="/gallery">Collections</Link>
+              <Link to="/learn">Collector's Guide</Link>
+              <Link to="/apply">Apply as Artist</Link>
             </div>
             <div className="footer-column">
               <b>Support</b>
-              <a href="#">Help Center</a>
-              <a href="#">Privacy Policy</a>
-              <a href="#">Terms of Service</a>
+              <a href="mailto:info@artistryhaven.com">Contact Us</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); }}>Privacy Policy</a>
+              <a href="#" onClick={(e) => { e.preventDefault(); }}>Terms of Service</a>
             </div>
           </div>
 
@@ -166,7 +163,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; 2024 Artistry Haven. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} Artistry Haven. All rights reserved.</p>
         </div>
       </footer>
     </>

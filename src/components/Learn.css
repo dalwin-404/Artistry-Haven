@@ -1,0 +1,405 @@
+.learn {
+  min-height: 100vh;
+  background: #ffffff;
+}
+
+/* Hero Section */
+.learn-hero {
+  padding: 6rem 0 4rem;
+  background: #ffffff;
+}
+
+.learn-hero-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  text-align: center;
+}
+
+.learn-hero-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 4.5rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 1.5rem 0;
+  line-height: 1.1;
+}
+
+.learn-hero-subtitle {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.5rem;
+  color: #6b7280;
+  margin: 0;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+}
+
+.learn-hero-divider {
+  width: 100%;
+  height: 1px;
+  background: #e5e7eb;
+  margin-top: 4rem;
+}
+
+/* Featured Article */
+.learn-featured {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.learn-featured-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.learn-featured-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.learn-featured-image-wrapper {
+  width: 100%;
+  height: 500px;
+  overflow: hidden;
+  background: #f9fafb;
+}
+
+.learn-featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.learn-featured-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.learn-featured-label {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.learn-featured-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+  line-height: 1.2;
+}
+
+.learn-featured-description {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.8;
+  color: #374151;
+  margin: 0;
+}
+
+.learn-featured-cta {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #111827;
+  text-decoration: none;
+  align-self: flex-start;
+  position: relative;
+  padding-bottom: 0.25rem;
+  transition: color 0.2s ease;
+}
+
+.learn-featured-cta::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #111827;
+  transform: scaleX(1);
+  transition: transform 0.2s ease;
+}
+
+.learn-featured-cta:hover {
+  color: #374151;
+}
+
+.learn-featured-cta:hover::after {
+  transform: scaleX(1.1);
+}
+
+/* Topic Grid */
+.learn-topics {
+  padding: 6rem 0;
+  background: #ffffff;
+}
+
+.learn-topics-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.learn-topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.learn-topic-card {
+  padding: 2.5rem;
+  border: 1px solid #f3f4f6;
+  background: #ffffff;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.learn-topic-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #e5e7eb;
+}
+
+.learn-topic-icon-wrapper {
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.learn-topic-icon {
+  color: #111827;
+}
+
+.learn-topic-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 1rem 0;
+}
+
+.learn-topic-text {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #6b7280;
+  margin: 0;
+}
+
+/* Interactive Glossary */
+.learn-glossary {
+  padding: 6rem 0;
+  background: #fafafa;
+}
+
+.learn-glossary-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.learn-glossary-title {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 3rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 3rem 0;
+  text-align: center;
+}
+
+.learn-glossary-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.learn-glossary-item {
+  border-bottom: 1px solid #e5e7eb;
+  background: #ffffff;
+  transition: all 0.2s ease;
+}
+
+.learn-glossary-item:first-child {
+  border-top: 1px solid #e5e7eb;
+}
+
+.learn-glossary-item.expanded {
+  background: #fafafa;
+}
+
+.learn-glossary-term {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  background: transparent;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #111827;
+  transition: all 0.2s ease;
+}
+
+.learn-glossary-term:hover {
+  background: #f9fafb;
+}
+
+.learn-glossary-term-text {
+  flex: 1;
+}
+
+.learn-glossary-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.learn-glossary-arrow-icon {
+  color: #6b7280;
+  transition: transform 0.3s ease;
+}
+
+.learn-glossary-arrow-icon.rotated {
+  transform: rotate(90deg);
+}
+
+.learn-glossary-definition {
+  padding: 0 2rem 1.5rem 2rem;
+  animation: fadeIn 0.3s ease;
+}
+
+.learn-glossary-definition p {
+  font-family: 'Quicksand', sans-serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #374151;
+  margin: 0;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .learn-hero-title {
+    font-size: 3.5rem;
+  }
+
+  .learn-featured-content {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .learn-featured-image-wrapper {
+    height: 400px;
+  }
+
+  .learn-featured-title {
+    font-size: 2.5rem;
+  }
+
+  .learn-topics-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .learn-hero {
+    padding: 4rem 0 3rem;
+  }
+
+  .learn-hero-container {
+    padding: 0 1.5rem;
+  }
+
+  .learn-hero-title {
+    font-size: 2.5rem;
+  }
+
+  .learn-hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  .learn-featured {
+    padding: 4rem 0;
+  }
+
+  .learn-featured-container {
+    padding: 0 1.5rem;
+  }
+
+  .learn-featured-image-wrapper {
+    height: 300px;
+  }
+
+  .learn-featured-title {
+    font-size: 2rem;
+  }
+
+  .learn-featured-description {
+    font-size: 1rem;
+  }
+
+  .learn-topics {
+    padding: 4rem 0;
+  }
+
+  .learn-topics-container {
+    padding: 0 1.5rem;
+  }
+
+  .learn-topic-card {
+    padding: 2rem;
+  }
+
+  .learn-topic-title {
+    font-size: 1.5rem;
+  }
+
+  .learn-glossary {
+    padding: 4rem 0;
+  }
+
+  .learn-glossary-container {
+    padding: 0 1.5rem;
+  }
+
+  .learn-glossary-title {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .learn-glossary-term {
+    padding: 1.25rem 1.5rem;
+    font-size: 1.125rem;
+  }
+
+  .learn-glossary-definition {
+    padding: 0 1.5rem 1.25rem 1.5rem;
+  }
+}
+
