@@ -143,7 +143,6 @@ export default function GalleryFeed() {
       
       // Check if artwork matches any selected medium
       return Array.from(selectedMediums).some((selectedMedium) => {
-        const selectedLower = selectedMedium.toLowerCase();
         if (selectedMedium === 'Oil on Canvas') {
           return mediumLower.includes('oil') && mediumLower.includes('canvas');
         } else if (selectedMedium === 'Watercolor') {

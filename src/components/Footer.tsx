@@ -1,5 +1,5 @@
 import { useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './Footer.css';
 import artistryHavenLogo from '../assets/artistryHavenLogo.png';
 
@@ -45,7 +45,6 @@ const MapPinIcon = () => (
 );
 
 export default function Footer() {
-  const navigate = useNavigate();
   const bubblesRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {

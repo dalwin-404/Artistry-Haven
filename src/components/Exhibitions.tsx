@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Calendar, Clock, MapPin } from 'lucide-react';
+import { Calendar } from 'lucide-react';
 import './Exhibitions.css';
 
 interface Exhibition {
