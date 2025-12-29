@@ -127,7 +127,7 @@
 
 /* Mobile Menu Button */
 .navbar-mobile-btn {
-  display: none;
+  display: flex;
   align-items: center;
   justify-content: center;
   background: none;
@@ -191,21 +191,17 @@
 }
 
 /* Responsive Design */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .navbar-nav {
     display: flex;
   }
 
   .navbar-mobile-btn {
-    display: flex;
+    display: none;
   }
 }
 
 @media (min-width: 1024px) {
-  .navbar-mobile-btn {
-    display: none;
-  }
-
   .navbar-container {
     padding: 0 3rem;
   }
