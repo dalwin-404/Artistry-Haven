@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { BookOpen, ShieldCheck, TrendingUp, Sun, Anchor, PenTool, ArrowRight } from 'lucide-react';
+import { ShieldCheck, TrendingUp, Sun, ArrowRight } from 'lucide-react';
 import './Learn.css';
 
 interface GlossaryTerm {
